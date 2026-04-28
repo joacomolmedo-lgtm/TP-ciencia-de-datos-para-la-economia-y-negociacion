@@ -8,7 +8,7 @@ El trabajo analiza la estructura del mercado laboral argentino a través de la E
 - Joaquín Escalante (917915)
 - Mauro Recalde (902291)
   
-## Objetivo
+# Objetivo
 
 # Hipotesis
 La brecha de ingresos entre trabajadores formales e informales es significativa, persistente en el tiempo, y se amplía con el nivel educativo: a mayor educación, mayor es la penalización salarial por trabajar en el sector informal. 
@@ -17,7 +17,7 @@ El nivel educativo determina simultáneamente el acceso al empleo formal y el ni
 Doble entrada de la hipótesis:
 1) Los más educados ganan proporcionalmente menos respecto a lo que ganarían en el sector formal es decir, la brecha formal/informal se amplía con la educación.
 2) A menor nivel educativo, mayor probabilidad de estar en el sector informal. La educación es una barrera de entrada al empleo formal. Y trabajar en el sector informal implica menores ingresos, independientemente del nivel educativo. Por lo que hay una doble penalización y una muestra de una relación entre nivel educativo y formalidad/informalidad.
-# Hipotesis secundaria
+## Hipotesis secundaria
 La informalidad laboral tiene una distribución sectorial no aleatoria: ciertos sectores de actividad (construcción, trabajo doméstico, comercio minorista) concentran sistemáticamente mayores tasas de informalidad que otros (industria manufacturera, sector público, servicios financieros), y esta estructura sectorial se mantiene relativamente estable a lo largo del tiempo.
 
 ## Datos

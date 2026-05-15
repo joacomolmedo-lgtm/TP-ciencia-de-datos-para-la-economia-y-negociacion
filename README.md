@@ -1,5 +1,5 @@
-# TP-ciencia-de-datos-para-la-economia-y-negociacion
-Este es el repositorio README.md del trabajo practico realizado por joaquin olmedo, Joaquín Escalante, Mauro Recalde, en el primer custrimestre de 2026. Este repopsitorio y su respectivo reademe seran modificados a lo largo del cuatrimeste en el cual se tiene como objetivo aumentar conocimientos en programacion y analisis de datos iniciando estudios y trabajos con el programa R.
+# TP ciencia de datos para la economia y negociacion
+Este es el repositorio README.md del trabajo practico realizado por Joaquin Olmedo, Joaquín Escalante, Mauro Recalde, en el primer custrimestre de 2026. Este repopsitorio y su respectivo reademe seran modificados a lo largo del cuatrimeste en el cual se tiene como objetivo aumentar conocimientos en programacion y analisis de datos iniciando estudios y trabajos con el programa R.
 # TEMA  
 El trabajo analiza la estructura del mercado laboral argentino a través de la EPH (Encuesta Permanente de Hogares del INDEC). El eje central es la brecha de ingresos entre trabajadores formales e informales, su evolución temporal y cómo varía según sector de actividad, nivel educativo y género. El período seleccionado permitirá testear la rigidez de la informalidad ante diferentes ciclos macroeconómicos de Argentina, incluyendo años de estancamiento, la crisis por pandemia y la posterior recuperación. La pregunta de fondo es si la informalidad laboral en Argentina es un fenómeno homogéneo o si tiene patrones diferenciados según características del trabajador y del mercado.
 ## Integrantes

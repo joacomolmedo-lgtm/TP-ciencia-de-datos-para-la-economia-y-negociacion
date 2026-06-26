@@ -1,0 +1,98 @@
+
+Call:
+svyglm(formula = P21_clean ~ condicion_formalidad * nivel_educativo + 
+    sexo + edad + edad2, design = sub_design)
+
+Survey design:
+subset(dis_eph, anio_analisis == a)
+
+Coefficients:
+                                                                    Estimate
+(Intercept)                                                       -17478.640
+condicion_formalidadInformal                                      -12175.346
+nivel_educativoPrimario Completo                                    3517.093
+nivel_educativoSecundario Incompleto                               12062.322
+nivel_educativoSecundario Completo                                 17698.788
+nivel_educativoSuperior Incompleto                                 25978.683
+nivel_educativoSuperior Completo                                   38670.664
+sexoVarón                                                          18633.920
+edad                                                                1748.301
+edad2                                                                -16.099
+condicion_formalidadInformal:nivel_educativoPrimario Completo      -3269.302
+condicion_formalidadInformal:nivel_educativoSecundario Incompleto  -9249.581
+condicion_formalidadInformal:nivel_educativoSecundario Completo   -10069.249
+condicion_formalidadInformal:nivel_educativoSuperior Incompleto   -14120.822
+condicion_formalidadInformal:nivel_educativoSuperior Completo      -8148.253
+                                                                  Std. Error
+(Intercept)                                                         6026.570
+condicion_formalidadInformal                                        3573.527
+nivel_educativoPrimario Completo                                    3216.121
+nivel_educativoSecundario Incompleto                                3308.815
+nivel_educativoSecundario Completo                                  2858.919
+nivel_educativoSuperior Incompleto                                  3263.631
+nivel_educativoSuperior Completo                                    3001.710
+sexoVarón                                                           1150.866
+edad                                                                 262.917
+edad2                                                                  3.113
+condicion_formalidadInformal:nivel_educativoPrimario Completo       4424.375
+condicion_formalidadInformal:nivel_educativoSecundario Incompleto   4227.768
+condicion_formalidadInformal:nivel_educativoSecundario Completo     4030.770
+condicion_formalidadInformal:nivel_educativoSuperior Incompleto     4200.354
+condicion_formalidadInformal:nivel_educativoSuperior Completo       5443.747
+                                                                  t value
+(Intercept)                                                        -2.900
+condicion_formalidadInformal                                       -3.407
+nivel_educativoPrimario Completo                                    1.094
+nivel_educativoSecundario Incompleto                                3.646
+nivel_educativoSecundario Completo                                  6.191
+nivel_educativoSuperior Incompleto                                  7.960
+nivel_educativoSuperior Completo                                   12.883
+sexoVarón                                                          16.191
+edad                                                                6.650
+edad2                                                              -5.172
+condicion_formalidadInformal:nivel_educativoPrimario Completo      -0.739
+condicion_formalidadInformal:nivel_educativoSecundario Incompleto  -2.188
+condicion_formalidadInformal:nivel_educativoSecundario Completo    -2.498
+condicion_formalidadInformal:nivel_educativoSuperior Incompleto    -3.362
+condicion_formalidadInformal:nivel_educativoSuperior Completo      -1.497
+                                                                              Pr(>|t|)
+(Intercept)                                                                   0.003735
+condicion_formalidadInformal                                                  0.000659
+nivel_educativoPrimario Completo                                              0.274159
+nivel_educativoSecundario Incompleto                                          0.000268
+nivel_educativoSecundario Completo                                 0.00000000061761187
+nivel_educativoSuperior Incompleto                                 0.00000000000000187
+nivel_educativoSuperior Completo                                  < 0.0000000000000002
+sexoVarón                                                         < 0.0000000000000002
+edad                                                               0.00000000003060514
+edad2                                                              0.00000023540736641
+condicion_formalidadInformal:nivel_educativoPrimario Completo                 0.459963
+condicion_formalidadInformal:nivel_educativoSecundario Incompleto             0.028701
+condicion_formalidadInformal:nivel_educativoSecundario Completo               0.012499
+condicion_formalidadInformal:nivel_educativoSuperior Incompleto               0.000777
+condicion_formalidadInformal:nivel_educativoSuperior Completo                 0.134468
+                                                                     
+(Intercept)                                                       ** 
+condicion_formalidadInformal                                      ***
+nivel_educativoPrimario Completo                                     
+nivel_educativoSecundario Incompleto                              ***
+nivel_educativoSecundario Completo                                ***
+nivel_educativoSuperior Incompleto                                ***
+nivel_educativoSuperior Completo                                  ***
+sexoVarón                                                         ***
+edad                                                              ***
+edad2                                                             ***
+condicion_formalidadInformal:nivel_educativoPrimario Completo        
+condicion_formalidadInformal:nivel_educativoSecundario Incompleto *  
+condicion_formalidadInformal:nivel_educativoSecundario Completo   *  
+condicion_formalidadInformal:nivel_educativoSuperior Incompleto   ***
+condicion_formalidadInformal:nivel_educativoSuperior Completo        
+---
+Signif. codes:  
+  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’
+  0.1 ‘ ’ 1
+
+(Dispersion parameter for gaussian family taken to be 759646182)
+
+Number of Fisher Scoring iterations: 2
+

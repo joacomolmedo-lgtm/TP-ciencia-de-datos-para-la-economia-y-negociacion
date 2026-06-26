@@ -1,90 +1,76 @@
 # TP ciencia de datos para la economia y negociacion
 Este es el repositorio README.md del trabajo practico realizado por Joaquin Olmedo, Joaquín Escalante, Mauro Recalde, en el primer custrimestre de 2026. Este repopsitorio y su respectivo reademe seran modificados a lo largo del cuatrimeste en el cual se tiene como objetivo aumentar conocimientos en programacion y analisis de datos iniciando estudios y trabajos con el programa R.
-# TEMA  
-El trabajo analiza la estructura del mercado laboral argentino a través de la EPH (Encuesta Permanente de Hogares del INDEC). El eje central es la brecha de ingresos entre trabajadores formales e informales, su evolución temporal y cómo varía según sector de actividad, nivel educativo y género. El período seleccionado permitirá testear la rigidez de la informalidad ante diferentes ciclos macroeconómicos de Argentina, incluyendo años de estancamiento, la crisis por pandemia y la posterior recuperación. La pregunta de fondo es si la informalidad laboral en Argentina es un fenómeno homogéneo o si tiene patrones diferenciados según características del trabajador y del mercado.
-## Integrantes
+# Brechas de ingreso formal/informal y su relación con educación y sector de actividad
 
-- Joaquin Olmedo (911371)
-- Joaquín Escalante (917915)
-- Mauro Recalde (902291)
-  
-# Objetivo
+**Grupo 12** — Joaquín Olmedo, Mauro Recalde, Joaquín Escalante
+Ciencia de Datos para Economía y Negocios | FCE-UBA | Prof. Nicolás Sidicaro
 
-# Hipotesis
-La brecha de ingresos entre trabajadores formales e informales es significativa, persistente en el tiempo, y se amplía con el nivel educativo: a mayor educación, mayor es la penalización salarial por trabajar en el sector informal. 
-Conjeturamos que esto se debe a una segmentación del mercado laboral donde el sector informal no cuenta con la estructura organizacional necesaria para absorber y remunerar productivamente el capital humano de alta calificación.
-El nivel educativo determina simultáneamente el acceso al empleo formal y el nivel de ingresos: a menor nivel educativo, mayor probabilidad de estar en el sector informal y menores ingresos dentro de ese sector. Esto genera una doble penalización para los trabajadores menos calificados quedan excluidos del empleo formal y, dentro del informal, perciben los ingresos más bajos. 
-Doble entrada de la hipótesis:
-1) Los más educados ganan proporcionalmente menos respecto a lo que ganarían en el sector formal es decir, la brecha formal/informal se amplía con la educación.
-2) A menor nivel educativo, mayor probabilidad de estar en el sector informal. La educación es una barrera de entrada al empleo formal. Y trabajar en el sector informal implica menores ingresos, independientemente del nivel educativo. Por lo que hay una doble penalización y una muestra de una relación entre nivel educativo y formalidad/informalidad.
-## Hipotesis secundaria
-La informalidad laboral tiene una distribución sectorial no aleatoria: ciertos sectores de actividad (construcción, trabajo doméstico, comercio minorista) concentran sistemáticamente mayores tasas de informalidad que otros (industria manufacturera, sector público, servicios financieros), y esta estructura sectorial se mantiene relativamente estable a lo largo del tiempo.
+## Tema
 
-## Datos
+Análisis de la informalidad laboral entre asalariados en Argentina, usando microdatos
+de la EPH (INDEC), en tres cortes transversales: 3er trimestre de 2017, 2021 y 2025.
 
-- **Fuente principal:**
-- Encuesta Permanente de Hogares (EPH) 
-·       Ingreso de la ocupación principal (numérica continua): ingreso mensual declarado en pesos corrientes de la ocupación principal del individuo
-·       Condición de informalidad (categórica binaria): si el trabajador tiene descuento jubilatorio — proxy estándar de formalidad en la EPH
-·       Nivel educativo (categórica ordinal): sin instrucción / primaria / secundaria / superior no universitaria / universitaria completa e incompleta
-·       Sector de actividad (categórica nominal): rama de actividad económica según clasificación CIIU — agrupada en sectores grandes
-·       Sexo (categórica binaria): variable de control para analizar si la brecha formal/informal interactúa con la brecha de género
-·       Aglomerado (categórica nominal): ciudad o región donde vive el encuestado — permite análisis geográfico
-·       Período (temporal): trimestre y año de la encuesta — permite análisis de evolución temporal
-·       Categoría ocupacional (categórica nominal): patrón / cuenta propia / asalariado / trabajador familiar — relevante porque la informalidad tiene distinta naturaleza según categoría
+**Hipótesis principal:** la brecha de ingresos entre asalariados formales e informales
+se amplía a medida que aumenta el nivel educativo.
 
-- **Fuente complementaria:**
-·       IPC del INDEC (fuente: INDEC): para deflactar los ingresos nominales y construir series de ingreso real comparables entre trimestres y años
-·       Canasta básica total (INDEC): como benchmark de referencia para contextualizar los ingresos (cuántos trabajadores informales quedan por debajo de la línea de pobreza)
-
-- **Período:**
-  A DEFINIR
-- **Unidad de análisis:** 
-A DEFINIR 
-## Análisis realizado
-
-1. A DEFINIR
+**Hipótesis complementarias:**
+1. La probabilidad de informalidad está asociada inversamente al nivel educativo.
+2. La informalidad no se distribuye al azar entre sectores de actividad: se concentra
+   de forma estructural y persistente en sectores específicos (construcción, servicio
+   doméstico, comercio).
 
 ## Estructura del repositorio
+├── input/              # Datos procesados, listos para análisis
 
-```
-proyecto/
-├── raw/              # Bases originales descargadas de INDEC
-├── auxiliar/          # Proyecciones de población
-├── input/             # Bases procesadas y listas para el análisis
 ├── output/
-│   ├── tablas/        # Tablas de resultados exportadas
-│   └── graficos/      # Visualizaciones generadas
-├── script/
-│   ├── 01_limpieza.R
-│   ├── 02_exploratorio.R
-│   ├── 03_analisis.R
-│   └── 04_visualizaciones.R
-├── utils/
-│   └── calcular_tasa_crecimiento.R
+
+│   ├── tablas/          # Tablas exportadas en CSV
+
+│   └── graficos/        # Gráficos exportados en PNG
+
+├── scripts/             # Códigos del proyecto, numerados por orden de ejecución
+
+├── BITACORA.md          # Registro de decisiones metodológicas
+
 └── README.md
-```
+Nota: la carpeta `raw/` no se versiona — los datos se descargan directamente de la
+API de la EPH (paquete `eph`) en `01_limpieza.R`, no hace falta guardarlos crudos.
 
-## Reproducción
+## Cómo correr el proyecto
 
-### Paquetes necesarios
+Ejecutar los scripts en este orden, cada uno se apoya en el output del anterior:
 
-```r
-install.packages(c("tidyverse", "readxl", "scales"))
-```
+1. **`scripts/01_limpieza.R`** — descarga los 3 trimestres de la EPH, filtra
+   asalariados ocupados, clasifica sector con CAES, trata datos faltantes y
+   outliers. Genera `input/eph_tres_periodos_limpia.rds` y
+   `output/evidencia_datos_faltantes.csv`.
+2. **`scripts/02_descriptivos.R`** — calcula estadísticas descriptivas ponderadas
+   y genera los dos gráficos principales. Genera `output/tablas_estadisticas_descriptivas.csv`,
+   `output/grafico_comunicacional_final.png`, `output/grafico_exploratorio_final.png`.
+3. **`scripts/03_inferencia.R`** — corre los 4 métodos de inferencia estadística
+   (t-test ponderado, regresión ponderada, dos chi-cuadrados). Genera los CSV de
+   `output/inferencia_*` y el detalle de los modelos en `output/detalle_modelo_m2_*.txt`.
 
-### Orden de ejecución
+Requiere los paquetes `tidyverse`, `eph`, `here`, `survey`, `scales`, `ggtext`
+(instalar con `install.packages()` si no están disponibles).
 
-1. `script/01_limpieza.R` — Lee las bases de `raw/` y `auxiliar/`, genera
-   los archivos en `input/`.
-2. `script/02_exploratorio.R` — Análisis descriptivo inicial.
-3. `script/03_analisis.R` — Cálculos principales.
-4. `script/04_visualizaciones.R` — Genera los gráficos en `output/graficos/`.
+## Métodos utilizados
 
-## Conclusiones principales
+| Método | Técnica | Hipótesis que evalúa |
+|---|---|---|
+| M1 | t-test de Welch ponderado, por nivel educativo | Principal |
+| M2 | Regresión ponderada con interacción educación×formalidad | Principal |
+| M3 | Chi-cuadrado: nivel educativo × formalidad | Complementaria 1 |
+| M3 | Chi-cuadrado: sector CAES × formalidad | Complementaria 2 |
 
-El análisis muestra que la dispersión del PBG per cápita entre provincias
-se mantuvo estable en el período estudiado, sin evidencia clara de convergencia.
-Las provincias con perfil extractivo presentaron mayor volatilidad,
-consistente con la hipótesis inicial.
-```
+## Limitaciones conocidas
+
+- `PP07H` (descuento jubilatorio) no distingue entre ausencia de aportes y
+  aportes a regímenes alternativos (cajas jubilatorias provinciales).
+- M2 no incluye región ni sector como controles: combinados con la interacción
+  educación×formalidad, generaban celdas con muy pocos casos para el tamaño
+  de muestra de 2025.
+- Los coeficientes de M2 para 2025 no son concluyentes, por el tamaño reducido
+  del grupo "Primario Incompleto" en ese año (239 casos).
+
+Ver `BITACORA.md` para el detalle completo de decisiones metodológicas.
